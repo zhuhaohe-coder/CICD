@@ -18,7 +18,7 @@ const main = async () => {
   //删除同名文件
   await runCommander(
     server.ssh,
-    "rm -rf" + CONFIG.releaseDir,
+    "rm -rf " + CONFIG.releaseDir,
     CONFIG.deployDir
   );
   //上传文件
@@ -41,12 +41,6 @@ const main = async () => {
     "mv dist " + CONFIG.releaseDir,
     CONFIG.deployDir
   );
-  //   //删除无用文件
-  //   await runCommander(
-  //     server.ssh,
-  //     "rm -rf " + CONFIG.targetFile,
-  //     CONFIG.deployDir
-  //   );
   console.log("over");
   process.exit(0);
 };
